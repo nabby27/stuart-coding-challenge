@@ -1,0 +1,2 @@
+DELETE http://localhost:3000/couriers/123 HTTP/2.0
+content-type: application/json

@@ -1,0 +1,6 @@
+GET http://localhost:3000/couriers/lookup HTTP/2.0
+content-type: application/json
+
+{
+    "capacity_required": 15
+}

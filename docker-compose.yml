@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  stuart_postgresql:
+    image: postgres:13
+    container_name: stuart_postgresql
+    environment:
+      POSTGRES_USER: stuart_user
+      POSTGRES_PASSWORD: stuart_password
+      POSTGRES_DB: stuart_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/postgres/:/docker-entrypoint-initdb.d/
+      - postgres-stuart-data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - stuart_postgresql
+
+  stuart_back:
+    image: "node:14-alpine"
+    container_name: stuart_back
+    restart: unless-stopped
+    tty: true
+    working_dir: "/api"
+    ports:
+      - ${BACK_PORT}:${BACK_PORT}
+    volumes:
+      - .:/api:rw,Z
+    depends_on:
+      - stuart_postgresql
+      - pgadmin
+
+#Volumes
+volumes:
+  postgres-stuart-data:
+    driver: local
+  pgadmin-data:
+    driver: local

@@ -1,0 +1,7 @@
+PATCH http://localhost:3000/couriers/123/availableCapacity HTTP/2.0
+content-type: application/json
+
+{
+    "pickupPackageCapacity": 0,
+    "deliveryPackageCapacity": 20
+}

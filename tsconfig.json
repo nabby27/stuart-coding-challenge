@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "ES2017",
+        "module": "commonjs",
+        "lib": [
+            "esnext",
+            "DOM"
+        ],
+        "sourceMap": true,
+        "outDir": "./dist",
+        "rootDir": "./app",
+        "strict": true,
+        "moduleResolution": "node",
+        "rootDirs": [
+            "./"
+        ],
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+    },
+}

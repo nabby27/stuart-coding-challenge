@@ -1,0 +1,7 @@
+POST http://localhost:3000/couriers HTTP/2.0
+content-type: application/json
+
+{
+    "id": 123,
+    "max_capacity": 45
+}
