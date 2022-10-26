@@ -50,3 +50,5 @@ In case you are feeling going deeper, here are some proposed bonus goals. Pick a
 * Show off! We love Typescript. We love TDD. We love unit tests. We love design patterns. We love engineering!
 * If you were to have more time, what would you do? Briefly explain what could be improved.
 * If you have further questions, don't hesitate asking.
+
+> To see all my coments about this challenge see de `Readme` folder
